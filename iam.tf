@@ -77,7 +77,8 @@ resource "aws_iam_policy" "connector" {
         "Resource" : [
           format("arn:aws:ssm:%s:%s:session/%s-*", var.aws_region, var.account_id, aws_iam_user.connector.name),
           aws_instance.db.arn,
-          format("arn:aws:ssm:%s:%s:document/SSM-SessionManagerRunShell", var.aws_region, var.account_id)
+          format("arn:aws:ssm:%s:%s:document/SSM-SessionManagerRunShell", var.aws_region, var.account_id),
+          "arn:aws:ssm:ap-southeast-1::document/AWS-StartPortForwardingSession"
         ]
       }
     ]
