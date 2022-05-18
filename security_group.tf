@@ -4,10 +4,9 @@ resource "aws_security_group" "db" {
   vpc_id      = aws_vpc.tf-vpc.id
 
   ingress {
-    from_port = 22
-    to_port   = 22
-    protocol  = "tcp"
-    # cidr_blocks = [aws_vpc.tf-vpc.cidr_block]
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
     cidr_blocks = [aws_vpc.tf-vpc.cidr_block]
   }
 
