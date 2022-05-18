@@ -1,0 +1,2 @@
+account_id = "your_aws_account_id"
+pubkey = "ssh_pub_key"
